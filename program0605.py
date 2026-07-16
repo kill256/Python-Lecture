@@ -10,27 +10,35 @@ motorA.run(50)
 rev = 0
 
 while True:
-    if
+
+    if rev == 0 and touch_sensor.pressed():
+
+        motorA.run(-50) 
+        rev = 1
         
-        
-        
-    elif
-        
-        
+    elif rev == 1 and not touch_sensor.pressed():
+
+        motorA.run(50) 
+        rev = 0 
         
     wait(50)
     c2 = tape_color(color_sensor)
     
+
     if (not c1 == c2) and (not c2 == Color.WHITE):
-        
+        if c2 == Color.RED:
+            print('RED')
+        elif c2 == Color.YELLOW:
+            print('YELLOW')
+        elif c2 == Color.GREEN:
+            print('GREEN')
+        elif c2 == Color.BLUE:
+            print('BLUE')
             
+
+    c1 = c2
         
-            
-        
-            
-        
-            
+
     if c2 == Color.BLACK:
-        
+        motorA.stop(Stop.BRAKE)
         break
-    

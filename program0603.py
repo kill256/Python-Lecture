@@ -15,23 +15,34 @@ while True:
     wait(50)
     c2 = tape_color(color_sensor)
     
-    if (not c1 == c2):
+
+    if (not c1 == c2) and (not c2 == Color.WHITE):
         
+        if c2 == Color.RED:
+            nR = nR + 1
+        elif c2 == Color.GREEN:
+            nG = nG + 1
             
-        
+        elif c2 == Color.BLUE:
+            nB = nB + 1
+  
+            if nB == 3: 
+                motorA.stop(Stop.BRAKE) 
+                break
+                
+        elif c2 == Color.YELLOW:
+            nY = nY + 1
             
-        
+
+        elif c2 == Color.BLACK:
+            motorA.stop(Stop.BRAKE)
+            break
             
-            
-                
-                
-                
-                
-                
-                
-        
-            
-    if c2 == Color.BLACK:
-        
-        break
-    
+
+    c1 = c2
+
+
+print("Red: "+str(nR))
+print("Green: "+str(nG))
+print("Blue: "+str(nB))
+print("Yellow: "+str(nY))
