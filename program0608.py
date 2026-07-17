@@ -1,6 +1,6 @@
 #!/usr/bin/env pybricks-micropython
 from common_calibration_001 import *
-MyColorSensor.ID = 0
+MyColorSensor.ID = 2
 
 motorA = Motor(Port.A)
 color_sensor = ColorSensor(Port.S1)

@@ -1,6 +1,6 @@
 #!/usr/bin/env pybricks-micropython
 from common_calibration_001 import *
-MyColorSensor.ID = 
+MyColorSensor.ID = 2
 
 class Character:
     def __init__(self, name, hp, power, defense):
