@@ -5,7 +5,6 @@ MyColorSensor.ID = 2
 motorA = Motor(Port.A)
 color_sensor = ColorSensor(Port.S1)
 touch_sensor = TouchSensor(Port.S2)
-
 c1 = Color.WHITE
 
 while True:
