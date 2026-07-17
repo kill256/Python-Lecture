@@ -6,6 +6,7 @@ sound = {Color.RED:523, Color.GREEN:587, Color.BLUE:659, Color.YELLOW:698}
 motorA = Motor(Port.A)
 color_sensor = ColorSensor(Port.S1)
 c1 = Color.WHITE
+motorA.run(50)
 
 while True:
     wait(50)

@@ -3,7 +3,7 @@ from common_calibration_001 import *
 MyColorSensor.ID = 2
 
 motorA = Motor(Port.A)
-motorA.run(-50)
+motorA.run(100)
 
 while True:
     wait(50)
