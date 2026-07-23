@@ -1,3 +1,68 @@
 #!/usr/bin/env pybricks-micropython
 from common_calibration_001 import *
+
 MyColorSensor.ID = 2
+
+
+motorA = Motor(Port.A)
+color_sensor = ColorSensor(Port.S1)
+
+c1 = Color.WHITE
+total_score = 0
+count = 0
+op = 'ADD'
+
+motorA.run(50)
+
+
+while True:
+    wait(50)
+    c2 = tape_color(color_sensor)
+
+
+    if (not c1 == c2) and (not c2 == Color.WHITE):
+        count += 1
+
+
+        if count % 2 != 0:
+            if c2 == Color.RED:
+                op = 'ADD'
+            elif c2 == Color.GREEN:
+                op = 'SUB'
+            elif c2 == Color.BLUE:
+                op = 'MUL'
+            elif c2 == Color.YELLOW:
+                op = 'NEG'
+
+
+        else:
+            val = 0
+            if c2 == Color.RED:
+                val = 1
+            elif c2 == Color.GREEN:
+                val = 2
+            elif c2 == Color.BLUE:
+                val = 3
+            elif c2 == Color.YELLOW:
+                val = 4
+
+
+            if op == 'ADD':
+                total_score += val
+            elif op == 'SUB':
+                total_score -= val
+            elif op == 'MUL':
+                total_score *= val
+            elif op == 'NEG':
+                total_score += (-1 * val)
+
+
+        c1 = c2
+
+
+    if c2 == Color.BLACK:
+        motorA.stop(Stop.BRAKE)
+        break
+
+
+print("Total: " + str(total_score))
