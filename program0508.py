@@ -1,6 +1,6 @@
 #!/usr/bin/env pybricks-micropython
 from common_calibration_001 import *
-MyColorSensor.ID = 2
+MyColorSensor.ID = 140
 
 sound = {Color.RED:523, Color.GREEN:587, Color.BLUE:659, Color.YELLOW:698}
 motorA = Motor(Port.A)

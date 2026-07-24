@@ -1,6 +1,6 @@
 #!/usr/bin/env pybricks-micropython
 from common_calibration_001 import *
-MyColorSensor.ID = 2
+MyColorSensor.ID = 140
 
 motorA = Motor(Port.A)
 color_sensor = ColorSensor(Port.S1)
@@ -17,11 +17,11 @@ while True:
 
 
     if (not c1 == c2) and (not c2 == Color.WHITE):
+        print(c2)
 
 
         if c2 == Color.BLUE:
             if not blue_flag:
-                # 【1回目の青】
                 blue_flag = True
 
                 motorA.run(-50)

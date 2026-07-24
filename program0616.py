@@ -1,6 +1,6 @@
 #!/usr/bin/env pybricks-micropython
 from common_calibration_001 import *
-
+MyColorSensor.ID = 140
 
 motorA = Motor(Port.A)
 color_sensor = ColorSensor(Port.S1)
@@ -22,8 +22,6 @@ def get_color_num(color):
     return 0
 
 pA_reversed = (pA % 10) * 10 + (pA // 10)
-
-# 初期変数
 c1 = Color.WHITE
 prev_num = 0 
 state = 0 
@@ -35,6 +33,7 @@ while True:
 
     if (not c1 == c2) and (not c2 == Color.WHITE):
         curr_num = get_color_num(c2)
+        print(c2)
 
         if curr_num != 0:
             pair = prev_num * 10 + curr_num
